@@ -85,7 +85,7 @@
         a.setAttribute('ref', 'nofollow');
         a.appendChild(document.createTextNode(name));
         if (value !== null) {
-          a.appendChild(document.createTextNode(': ');
+          a.appendChild(document.createTextNode(': '));
           var strong = document.createElement('strong');
           strong.className = value ? 'on' : 'off';
           a.appendChild(strong);
