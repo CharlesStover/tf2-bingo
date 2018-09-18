@@ -82,13 +82,14 @@
         }
         option.setAttribute('href', '?' + href.join('&'));
         option.setAttribute('ref', 'nofollow');
-        option.appendChild(document.createTextNode('[ ' + name + ' ]'));
+        option.appendChild(document.createTextNode('[ ' + name));
         if (value !== null) {
           option.appendChild(document.createTextNode(': '));
           var strong = document.createElement('strong');
           strong.className = value ? 'on' : 'off';
           option.appendChild(strong);
         }
+        option.appendChild(document.createTextNode(' ]'));
         options.insertBefore(option, options.firstChild);
       };
       addOption(cliffless, !free, 'Free Space', free);
