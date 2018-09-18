@@ -81,14 +81,14 @@
         if (f) {
           href.push('free');
         }
-        a.setAttribute('href', '?' + href.join('&'));
-        a.setAttribute('ref', 'nofollow');
-        a.appendChild(document.createTextNode(name));
+        option.setAttribute('href', '?' + href.join('&'));
+        option.setAttribute('ref', 'nofollow');
+        option.appendChild(document.createTextNode(name));
         if (value !== null) {
-          a.appendChild(document.createTextNode(': '));
+          option.appendChild(document.createTextNode(': '));
           var strong = document.createElement('strong');
           strong.className = value ? 'on' : 'off';
-          a.appendChild(strong);
+          option.appendChild(strong);
         }
         options.insertBefore(option, options.firstChild);
       };
