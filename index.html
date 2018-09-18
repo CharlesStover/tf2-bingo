@@ -82,16 +82,14 @@
         }
         option.setAttribute('href', '?' + href.join('&'));
         option.setAttribute('ref', 'nofollow');
-        option.appendChild(document.createTextNode(name));
+        option.appendChild(document.createTextNode('[ ' + name + ' ]'));
         if (value !== null) {
           option.appendChild(document.createTextNode(': '));
           var strong = document.createElement('strong');
           strong.className = value ? 'on' : 'off';
           option.appendChild(strong);
         }
-        options.insertBefore(document.createTextNode(' ]'), options.firstChild);
         options.insertBefore(option, options.firstChild);
-        options.insertBefore(document.createTextNode('[ '), options.firstChild);
       };
       addOption(cliffless, !free, 'Free Space', free);
       addOption(!cliffless, free, 'Cliffs', !cliffless);
