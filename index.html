@@ -1,13 +1,58 @@
-<table>
-	<thead><tr><th>B</th><th>I</th><th>N</th><th>G</th><th>O</th></tr></thead>
-	<tbody>
-		{{tbody}}
-	</tbody>
-	<tfoot>
-		<tr>
-			<td colspan="5">{{options}}</td>
-		</tr>
-	</tfoot>
-</table>
-<script src="bingo.js" type="text/javascript"></script>
-<script src="http://i.charlesstover.com/google-analytics/UA-61755028-2.js" type="text/javascript"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Team Fortress 2 Bingo</title>
+    <link rel="stylesheet" media="screen" type="text/css" href="bingo.min.css" />
+    <meta name="description" value="Mark your TF2 Bingo card as stereotypical situations unfold throughout your game!" />
+    <meta name="keywords" value="bingo, game bingo, team fortress, team fortress 2, tf2, team fortress bingo, team fortress 2 bingo, tf2 bingo, video game bingo" />
+    <style type="text/css">
+      body {
+        background-image: url("http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/440/{{background_image}}.jpg");
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead><tr><th>B</th><th>I</th><th>N</th><th>G</th><th>O</th></tr></thead>
+      <tbody>
+        {{tbody}}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5" id="options">
+            <a href="https://charlesstover.com/donate" rel="noopener noreferrer" target="_blank" title="Donate to the Developer">[ Donate ]</a>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <script src="bingo.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var options = document.getElementById('options');
+      var cliffless = /cliffless/.test(location.search);
+      var free = /free/.test(location.search);
+      var addOption = function(c, f, name, value) {
+        var option = document.createElement('a');
+        var href = [];
+        if (c) {
+          href.push('cliffless');
+        }
+        if (f) {
+          href.push('free');
+        }
+        a.setAttribute('href', '?' + href.join('&'));
+        a.setAttribute('ref', 'nofollow');
+        a.appendChild(document.createTextNode(name));
+        if (value !== null) {
+          a.appendChild(document.createTextNode(': ');
+          var strong = document.createElement('strong');
+          strong.className = value ? 'on' : 'off';
+          a.appendChild(strong);
+        }
+        options.insertBefore(option, options.firstChild);
+      };
+      addOption(cliffless, !free, 'Free Space', free);
+      addOption(!cliffless, free, 'Cliffs', !cliffless);
+      addOption(cliffless, free, 'New Card', null);
+    </script>
+  </body>
+</html>
