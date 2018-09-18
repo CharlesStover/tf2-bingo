@@ -5,11 +5,6 @@
     <link rel="stylesheet" media="screen" type="text/css" href="bingo.min.css" />
     <meta name="description" value="Mark your TF2 Bingo card as stereotypical situations unfold throughout your game!" />
     <meta name="keywords" value="bingo, game bingo, team fortress, team fortress 2, tf2, team fortress bingo, team fortress 2 bingo, tf2 bingo, video game bingo" />
-    <style type="text/css">
-      body {
-        background-image: url("http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/440/{{background_image}}.jpg");
-      }
-    </style>
   </head>
   <body>
     <table>
@@ -40,7 +35,7 @@
       ];
       document.body.style.setProperty(
         'background-image',
-        'url("' + backgroundImages[Math.floor(Math.random() * backgroundImages.length)] + '")'
+        'url("http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/440/' + backgroundImages[Math.floor(Math.random() * backgroundImages.length)] + '.jpg")'
       );
       var spaces = [ '2+ Mini-Sentries', '3+ Idle in Spawn', '3+ Snipers or Spies on Team', 'Accusations of Hacking', 'Australium Weapon', 'Charged Medic Dies Before Ubering', 'Child on Mic', 'Complaints in Chat', 'Demoman or Soldier Suicide', 'Die Next to Health Kit', 'Doesn\'t Speak English', 'Dominate an Unusual Hat Wearer', 'Full-Health "Medic!" Spam', 'Gibus', 'Hacker', 'Health Stolen From Flaming Ally', 'Idle Heavy Eating Sandvich', 'Music Over Mic', 'My Little Pony Spray', '"Need a Dispenser Here!" Spam', 'No Medic at Start of Round', 'Offensive Name', 'The Phlogistinator', 'Player Killed by Taunt', 'Players Attacking Uber', 'Porn Spray', 'Pre-Game Conga', 'Pyro Doesn\'t Extinguish Teammate', 'Spy is Being Dominated', 'Spy is Dominating', 'Spy Misses 2 Stabs in a Row', 'Strange Festive Weapon', 'Taunted in Kill Cam', 'Teams Scrambled', 'Teleporter Entrance Next to Exit', 'Teleporter Facing Wrong Direction', 'Trade', '"Try-Hard"', 'Vote Kick' ];
       if (!cliffless) {
